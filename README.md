@@ -23,7 +23,7 @@ Result: Finds the email preference (0.847 similarity)
 
 Even with different wording, semantic search finds relevant information.
 
-## Why Oracle 26ai?
+## Why Oracle?
 
 **Technical reasons:**
 - **Native VECTOR type**: No extensions needed like pgvector
@@ -49,15 +49,14 @@ Oracle made sense for regulated industries where data protection and reliability
 ### Prerequisites
 
 - Python 3.9+
-- Oracle Autonomous Database 26ai (free tier works)
+- Oracle Autonomous Database (free tier works)
 - Oracle Instant Client
 
 ### Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/oracle-agentic-memory.git
-cd oracle-agentic-memory
+git clone https://github.com/srinidhi-sat/agent-memory.git
 
 # Install dependencies
 pip install sentence-transformers oracledb numpy

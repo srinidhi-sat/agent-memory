@@ -1,7 +1,7 @@
 # Beyond Chat History: Building Persistent, Semantic Memory for AI Agents
 ## Building Agentic Memory with Oracle AI Vector Search
 
-*A practical guide to moving beyond simple chat history, using Oracle Database 26ai's vector search to give your AI agents a semantic memory that works across conversations.*
+*A practical guide to moving beyond simple chat history, using Oracle Database's vector search to give your AI agents a semantic memory that works across conversations.*
 
 ## What Is Agentic Memory?
 
@@ -75,14 +75,14 @@ Frustrating for everyone.
 
 **What we needed:** Search by meaning, "What did this borrower say about payment?". Should find "I'll pay next week" even though the words don't match.
 
-That's when I started exploring semantic memory with vector search. This project is that exploration, using Oracle Autonomous Database 26ai.
+That's when I started exploring semantic memory with vector search. This project is that exploration, using Oracle Autonomous Database.
 
 
-## Why Oracle 26ai for This?
+## Why Oracle for This?
 
 I'll be honest about the technical reasons I chose Oracle for this exploration.
 
-### Oracle Database 26ai 
+### Oracle Database 
 
 While solutions like pgvector, PostgreSQL or dedicated vector DBs (Weaviate, Qdrant) are great choices, Oracle 26ai was the right fit for this specific scenario because:
 
@@ -469,24 +469,24 @@ Everything you need to add semantic memory to an AI agent.
 
 After building this:
 
-**Simplicity:** One database, two operations (store, search). Maintainable.
+- **Simplicity:** One database, two operations (store, search). Maintainable.
 
-**Oracle handles complexity:** Vector indexing, similarity search, query optimization- Oracle does this well.
+- **Oracle handles complexity:** Vector indexing, similarity search, query optimization- Oracle does this well.
 
-**Data stays internal:** Local embeddings mean sensitive data never leaves your server.
+- **Data stays internal:** Local embeddings mean sensitive data never leaves your server.
 
-**Hybrid queries:** Semantic search + business logic in one query.
+- **Hybrid queries:** Semantic search + business logic in one query.
 
-**Production-ready:** ACID transactions, 99.95% SLA, enterprise support.
+- **Production-ready:** ACID transactions, 99.95% SLA, enterprise support.
 
-**Scales:** From prototype to millions of vectors.
+- **Scales:** From prototype to millions of vectors.
 
 
 ## Wrapping Up
 
 The conversation agent I worked on would have benefited from this. Instead of manually searching transcripts, we could have asked "What did this borrower say about their situation?" and found relevant context immediately.
 
-With Oracle 26ai's vector support, implementing semantic memory is straightforward:
+With Oracle's vector support, implementing semantic memory is straightforward:
 - One table with VECTOR column.
 - One embedding model.
 - Two SQL operations (insert, search).
