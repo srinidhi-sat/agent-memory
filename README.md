@@ -71,6 +71,10 @@ pip install sentence-transformers oracledb numpy
 2. Download wallet files
 3. Update connection details in notebook
 
+### Blog
+
+To read the full blog, open `blogpost.md`.
+
 ### Run
 
 Open `agent_memory.ipynb` and run all cells.
@@ -78,7 +82,7 @@ Open `agent_memory.ipynb` and run all cells.
 ## Project Structure
 
 ```
-.
+main
 ├── agent_memory.ipynb           # Main demo notebook
 ├── blogpost.md                  # Detailed technical blog
 ├── README.md                    # This file
@@ -234,18 +238,21 @@ WITH TARGET ACCURACY 95;
 
 **Design decisions:**
 - 384 dimensions (could use 768 for more nuance, slower).
-- Local embeddings (vs API-based like OpenAI - chose data protection).
+- Local embeddings (vs API-based like OpenAI- chose data protection).
 
 ## What I Learned
 
-1. **Oracle's vector search is solid** - Fast, reliable, integrates with SQL.
-2. **Hybrid queries are powerful** - Semantic + filters in one query is genuinely useful.
-3. **Local embeddings matter** - For regulated industries, data can't leave server.
-4. **Memory types are essential** - Categories improve search accuracy.
-5. **384 dimensions is enough** - Bigger isn't always better.
+1. **Oracle's vector search is solid**: Fast, reliable, integrates with SQL.
+2. **Hybrid queries are powerful**: Semantic + filters in one query is genuinely useful.
+3. **Local embeddings matter**: For regulated industries, data can't leave server.
+4. **Memory types are essential**: Categories improve search accuracy.
+5. **384 dimensions is enough**: Bigger isn't always better.
 
 ## Resources
 
+- [Blogpost Link](https://github.com/srinidhi-sat/agent-memory/blob/main/blogpost.md)
+- [Jupter Notebook Link](https://github.com/srinidhi-sat/agent-memory/blob/main/agent_memory.ipynb)
+- [Requirements](https://github.com/srinidhi-sat/agent-memory/blob/main/requirements.txt)
 - [Oracle 26ai Vector Search Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/26/vecse/)
 - [Sentence Transformers](https://www.sbert.net/)
 - [python-oracledb](https://python-oracledb.readthedocs.io/)

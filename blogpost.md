@@ -499,7 +499,9 @@ Ready to build? Clone the repository and open the `agent_memory.ipynb` notebook 
 
 ## Resources
 
-- [Jupter Notebook Link](https://github.com/srinidhi-sat/agent-memory/agent_memory.ipynb)
+- [Jupter Notebook Link](https://github.com/srinidhi-sat/agent-memory/blob/main/agent_memory.ipynb)
+- [Requirements](https://github.com/srinidhi-sat/agent-memory/blob/main/requirements.txt)
+- [README](https://github.com/srinidhi-sat/agent-memory/blob/main/README.md)
 - [Oracle 26ai Vector Search Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/26/vecse/)
 - [Sentence Transformers](https://www.sbert.net/)
 - [python-oracledb](https://python-oracledb.readthedocs.io/)
