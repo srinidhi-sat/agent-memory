@@ -38,9 +38,9 @@ Result: Found. (same meaning)
 ```
 
 To do this, you need:
-1. **Vector embeddings**: Convert text to numbers that capture meaning.
-2. **Vector database**: Store and search these embeddings efficiently.
-3. **Similarity search**: Find semantically similar content.
+1. Vector embeddings: Convert text to numbers that capture meaning.
+2. Vector database: Store and search these embeddings efficiently.
+3. Similarity search: Find semantically similar content.
 
 This is the foundation of RAG (Retrieval-Augmented Generation), giving LLMs relevant context to generate better responses.
 
@@ -48,10 +48,10 @@ This is the foundation of RAG (Retrieval-Augmented Generation), giving LLMs rele
 
 Any AI system that interacts with users over time needs memory:
 
-- **Customer support bots**: Remember user preferences and past issues.
-- **Personal assistants**: Recall user schedules, habits, preferences.
-- **Conversation agents**: Maintain context across multiple interactions.
-- **Knowledge systems**: Find relevant information from large datasets.
+- Customer support bots: Remember user preferences and past issues.
+- Personal assistants: Recall user schedules, habits, preferences.
+- Conversation agents: Maintain context across multiple interactions.
+- Knowledge systems: Find relevant information from large datasets.
 
 Without memory, every interaction starts from scratch. With memory, agents become genuinely useful.
 
@@ -61,7 +61,6 @@ Without memory, every interaction starts from scratch. With memory, agents becom
 Last year, I worked on a conversation agent for a loan optimization system (can't share specifics due to data protection). The agent would call borrowers, have conversations in multiple languages (English, Hindi, Marathi, Kannada), and record summaries.
 
 The challenge: finding relevant information from past conversations. We stored transcripts, but keyword search was painful:
-
 - Someone says "I'll pay next week" in one call.
 - Later asks "when did I say I'd pay?"
 - We'd manually search through transcripts.
@@ -233,7 +232,8 @@ def store_memory(text, memory_type):
     """, [text, embedding_str, memory_type])
 ```
 
-**Developer Note: Handling Embeddings in python-oracledb**: When using the Thick mode of the Oracle client, you need to pass the embedding as a string and use the `TO_VECTOR()` SQL function. This is a common stumbling block.
+**Developer Note: Handling Embeddings in python-oracledb**
+When using the Thick mode of the Oracle client, you need to pass the embedding as a string and use the `TO_VECTOR()` SQL function. This is a common stumbling block.
 
 
 ## Semantic Search
@@ -248,9 +248,8 @@ def search_memories(query, top_k=5):
     
     # Search using vector similarity
     cursor.execute("""
-        SELECT 
-            text,
-            (1 - VECTOR_DISTANCE(embedding, TO_VECTOR(:1), COSINE)) as similarity
+        SELECT text,
+        (1 - VECTOR_DISTANCE(embedding, TO_VECTOR(:1), COSINE)) as similarity
         FROM memories
         ORDER BY similarity DESC
         FETCH FIRST :2 ROWS ONLY
@@ -433,20 +432,20 @@ Remember: `all-MiniLM-L6-v2` has a 256-word token limit. For longer conversation
 
 Extensions for different use cases:
 
-**Customer support:**
+- **Customer support:**
 ```python
 memory.store("User reported login issue", "issue")
 memory.store("Fixed by resetting password", "resolution")
 # Later: search("user problems"), finds both
 ```
 
-**Personal assistant:**
+- **Personal assistant:**
 ```python
 memory.store("User has team meeting every Monday 10am", "schedule")
 # Later: search("recurring meetings"), finds it
 ```
 
-**Knowledge management:**
+- **Knowledge management:**
 ```python
 memory.store("Project Alpha budget approved Q2", "decision")
 # Later: search("budget approvals"), finds relevant decisions
