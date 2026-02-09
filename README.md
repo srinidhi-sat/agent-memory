@@ -126,7 +126,7 @@ query_embedding = model.encode(query)
 
 cursor.execute("""
     SELECT text,
-           (1 - VECTOR_DISTANCE(embedding, TO_VECTOR(:1), COSINE)) as similarity
+    (1 - VECTOR_DISTANCE(embedding, TO_VECTOR(:1), COSINE)) as similarity
     FROM memories
     ORDER BY similarity DESC
     FETCH FIRST 5 ROWS ONLY
