@@ -380,7 +380,8 @@ Testing on Oracle's free tier (Always Free):
 - 5,000 memories: ~25ms
 - 10,000 memories: ~40ms
 
-Fast enough for production. With proper indexing, Oracle scales to millions of vectors.
+Fast enough for interactive demos, and a good base to productionise with indexing and partitioning.
+With proper indexing, Oracle scales to millions of vectors.
 
 
 ## Production Considerations
@@ -476,7 +477,7 @@ After building this:
 
 - **Hybrid queries:** Semantic search + business logic in one query.
 
-- **Production-ready:** ACID transactions, 99.95% SLA, enterprise support.
+- **production oriented:** ACID transactions, 99.95% SLA, enterprise support.
 
 - **Scales:** From prototype to millions of vectors.
 

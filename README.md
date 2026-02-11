@@ -18,7 +18,7 @@ A memory system for AI agents that can:
 ```
 Stored: "User prefers email notifications over SMS"
 Query: "What's the user's communication preference?"
-Result: Finds the email preference (0.847 similarity)
+Result: Retrieves the “email preference” memory even with different wording
 ```
 
 Even with different wording, semantic search finds relevant information.
@@ -28,7 +28,7 @@ Even with different wording, semantic search finds relevant information.
 **Technical reasons:**
 - **Native VECTOR type**: No extensions needed like pgvector
 - **Hybrid SQL + vector**: Combine semantic search with business logic in one query
-- **In-memory indexes**: Sub-30ms search on thousands of vectors
+- **In-memory indexes**: In my testing on Always Free, search stayed under ~50ms up to 10k rows without an index.
 - **ACID transactions**: Important for financial/regulated data
 
 **Practical reasons:**
@@ -40,7 +40,7 @@ Even with different wording, semantic search finds relevant information.
 **Alternative considered:**
 - Pinecone/Weaviate: Separate service to manage.
 - PostgreSQL + pgvector: Extension, not native.
-- ChromaDB: More suited for experimentation than regulated production environments.
+- ChromaDB: Great for prototyping, but you may still need hardening for regulated production environments.
 
 Oracle made sense for regulated industries where data protection and reliability matter.
 
