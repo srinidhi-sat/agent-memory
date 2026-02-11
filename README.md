@@ -49,7 +49,8 @@ Oracle made sense for regulated industries where data protection and reliability
 ### Prerequisites
 
 - Python 3.9+
-- Oracle Autonomous Database (free tier works)
+- Oracle Autonomous Database (free tier)
+- Wallet downloaded and extracted
 - Oracle Instant Client
 
 ### Installation
@@ -67,17 +68,61 @@ pip install sentence-transformers oracledb numpy
 
 ### Configuration
 
-1. Set up Oracle Autonomous Database
-2. Download wallet files
-3. Update connection details in notebook
+1. Create Oracle Cloud Account:
+    - Go to Oracle Cloud Free Tier.
+    - Sign up with email.
+2. Create Autonomous Database:
+    - Deployment type: "Shared Infrastructure"
+    - Always Free: Check this box
+    - Database name: e.g., AGENTMEM
+    - Workload type: Transaction Processing
+    - Password: Set admin password (Add as DATABASE_PASSWORD)
+3. Configure Network Access:
+    - After database creation, go to "Database Details"
+    - Click "Edit Access Rules".
+    - Add your IP address.
+4. Download Wallet:
+    - On Database Details page, click "DB Connection"
+    - Click "Download Wallet"
+    - Set wallet password (optional but recommended)
+    - Download zip file
+    - Extract to a local folder (Add as WALLET_DIR)
+
+
+### Thick Mode Configuration
+This example uses Oracle Thick mode.
+
+1. Why Thick mode?
+    - Required for full VECTOR support in Oracle 26ai
+    - Enables Oracle-specific advanced features
+    - Uses native C libraries for stable database operations
+
+2. Install Oracle Instant Client
+    - Download from Oracle Instant Client Downloads
+    - Choose a version compatible with your database
+    - Extract to folder
+    - Add the path as INSTANT_CLIENT_DIR.
+
 
 ### Blog
 
 To read the full blog, open `blogpost.md`.
 
+
 ### Run
 
-Open `agent_memory.ipynb` and run all cells.
+1. Open `agent_memory.ipynb`.
+2. Update configuration variables:
+    - WALLET_DIR
+    - DATABASE_PASSWORD
+    - INSTANT_CLIENT_DIR
+3. Run the notebook from top to bottom.
+4. The notebook will:
+    - Create the memory table
+    - Insert sample memory records
+    - Execute vector similarity search
+    - Generate an example agent response
+
 
 ## Project Structure
 
@@ -183,7 +228,7 @@ Fast enough for real-time applications.
 
 ## Production Considerations
 
-For production deployment, add:
+For production deployment for your use case, add:
 
 ### 1. User Isolation
 ```sql
