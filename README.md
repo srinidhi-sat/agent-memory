@@ -40,7 +40,7 @@ Even with different wording, semantic search finds relevant information.
 **Alternative considered:**
 - Pinecone/Weaviate: Separate service to manage.
 - PostgreSQL + pgvector: Extension, not native.
-- ChromaDB: Not production-ready.
+- ChromaDB: More suited for experimentation than regulated production environments.
 
 Oracle made sense for regulated industries where data protection and reliability matter.
 
@@ -215,7 +215,7 @@ model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
 ## Performance
 
-From testing on Oracle's free tier:
+Benchmarks were run locally using the Oracle Always Free tier with a small memory dataset.
 
 | Operation               | Latency | Scale                   |
 |-------------------------|---------|-------------------------|
@@ -317,4 +317,4 @@ MIT
 Questions or feedback? Open an issue on GitHub.
 
 
-*This project was built to explore semantic memory for AI agents, based on challenges encountered in a loan conversation system. The implementation demonstrates Oracle 26ai's vector capabilities with a practical, production-ready approach.*
+*This project was built to explore semantic memory for AI agents, based on challenges encountered in a loan conversation system. The implementation demonstrates Oracle 26ai's vector capabilities with a practical, production-oriented approach.*

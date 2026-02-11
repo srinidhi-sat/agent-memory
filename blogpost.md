@@ -508,4 +508,4 @@ Ready to build? Clone the repository and open the `agent_memory.ipynb` notebook 
 - [Oracle Always Free Tier](https://www.oracle.com/cloud/free/)
 
 
-*This project was built to explore semantic memory for AI agents, based on challenges encountered in a loan conversation system. The implementation demonstrates Oracle 26ai's vector capabilities with a practical, production-ready approach.*
+*This project was built to explore semantic memory for AI agents, based on challenges encountered in a loan conversation system. The implementation demonstrates Oracle 26ai's vector capabilities with a practical, production-oriented approach.*
